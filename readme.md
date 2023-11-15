@@ -40,12 +40,18 @@
 
   - In this example we only get data from the test table that field name is name and email other filed name data will not get. If we want other field data the we need to follow same process as name, email.We can also do same for `findOne()` function.
 
-  - For field filtering we can use another process but the process is only work with the `find()` function. We can use `project()` function that take the field name that filed we want to get.
+  - For field filtering we can use another process but the process is only work with the `find()` function. We can use `project()/projection` function that take the field name that filed we want to get.
 
   - Example
 
   ```js
   db.test.find().project({ name: 1, email: 1 });
+
+
+  db.test.find().projection({ name: 1, email: 1 });
+
+  <!-- Both do same -->
+
   ```
 
   - Example of `findOne()` function
@@ -56,5 +62,22 @@
 
   - In this given code the we will get data from the test table where the email is `example@gmail.com`. For field filtering we can pass the second parameter that field we want
 
-- ## Mongodb operator
-  -
+- ## Mongodb Comparison Query Operators
+
+  - $eq
+  - $nin
+  - $and
+  - $or
+  - $exists
+  - $type
+  - $size
+  - $set
+  - $addToSet
+  - $push
+  - $unset
+  - $pop
+  - $pull
+  - $pullAll
+
+
+    
